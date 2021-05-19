@@ -1,0 +1,179 @@
+body.loggedIn header .header .header-right {
+  display: flex;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 250ms linear;
+}
+header .header {
+  max-width: 1660px;
+  margin: 0 auto;
+  padding: 6px 25px;
+  justify-content: unset;
+}
+header .header > div {
+  flex: 1;
+}
+header .header .header-left .logo-icon {
+  background-color: #ffffff;
+}
+header .header .header-left .logo-icon:hover {
+  background-color: rgba(0, 24, 73, 0.02745098);
+}
+header .header .header-left .logo-icon.subheader {
+  display: none;
+}
+header .header .header-left .search-container {
+  display: none;
+  min-width: 220px;
+  max-width: 300px;
+  height: 28px;
+  margin-left: 25px;
+}
+header .header .header-left .search-container:focus-within {
+  max-width: 380px;
+}
+header .header .header-left .search-container button.search-button {
+  height: 30px;
+}
+header .header .header-left .article-title-subheader {
+  display: flex;
+  align-items: baseline;
+  white-space: nowrap;
+  margin: 0 15px;
+  padding-left: 30px;
+  border-left: 1px solid #c8c8c8;
+  margin-left: 15px;
+}
+header .header .header-left .article-title-subheader .title {
+  margin: 0;
+  font-family: "Linux Libertine", "Georgia", "Times", serif;
+  font-size: 22px;
+}
+header .header .header-left .article-title-subheader .title-section {
+  margin: 0;
+  padding-left: 15px;
+}
+header .header .header-middle {
+  text-align: center;
+}
+header .header .header-right {
+  display: none;
+  justify-content: flex-end;
+}
+header .header .header-right .button-group {
+  display: flex;
+}
+header .header .header-right .button-group a {
+  width: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+header .header .header-right .button-group a img {
+  margin-top: 6px;
+}
+header .header .header-right .languages-container div.language-menu {
+  margin: 0;
+  width: max-content;
+  position: absolute;
+  right: 0px;
+  top: 33px;
+  z-index: 10;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+  display: none;
+}
+header .header .header-right .languages-container div.language-menu img {
+  width: 514px;
+}
+header .header .header-right .languages-container div.language-menu img:hover {
+  opacity: 1;
+}
+header .header .header-right .user-icon {
+  background-color: #ffffff;
+}
+header .header .header-right .user-icon:hover {
+  background-color: rgba(0, 24, 73, 0.02745098);
+}
+header .header .header-right .user-menu {
+  top: 38px;
+  font-size: 14px;
+  font-weight: 500;
+}
+header .header .header-right .user-menu li:first-child {
+  padding-top: 10px;
+}
+header .header .header-right .user-menu li:last-child {
+  border-top: 1px solid #cccccc;
+  padding: 10px 15px 8px 15px;
+}
+header .header .header-right .user-menu li img {
+  margin-right: 8px;
+}
+header .header .subheader {
+  opacity: 0;
+  transform: translateY(-45px);
+  transition: all 100ms linear;
+}
+header.headroom--top {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+header.headroom--not-top.headroom--unpinned {
+  opacity: 1;
+  transform: translateY(0%);
+}
+header.headroom--not-top.headroom--pinned {
+  opacity: 1;
+  transform: translateY(0%);
+}
+header.headroom--not-top.headroom--pinned .header {
+  background-color: #fffffff7;
+  border-bottom: 1px solid #E0E2E5;
+}
+header.headroom--not-top.headroom--pinned .subheader {
+  opacity: 1;
+  transform: translateY(0);
+}
+header.logged-in .header {
+  padding: 5px 25px;
+}
+header.logged-in .header.logged-in {
+  display: flex;
+}
+header.logged-in .header.logged-out {
+  display: none;
+}
+header.logged-in .header .header-left .search-icon {
+  margin: 0 6px 0 10px;
+}
+
+@media (max-width: 800px) {
+  header .header .header-right .button-group, header .header .header-right .languages-container {
+    display: none;
+  }
+}
+@media (max-width: 1095px) {
+  header .header {
+    padding: 6px 8px 6px 10px;
+  }
+  header .header .header-right .languages-container a.button span {
+    display: none;
+  }
+}
+@media (max-width: 1175px) {
+  header .header .header-left .logo-icon {
+    display: none;
+  }
+  header .header .header-left .logo-icon.subheader {
+    display: flex;
+  }
+}
+
+/*# sourceMappingURL=floatingheader.css.map */

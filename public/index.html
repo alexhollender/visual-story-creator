@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Community — round 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/page.css">
+  <link rel="stylesheet" href="css/vector.css">
+  <link rel="stylesheet" href="css/floatingheader.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/search.css">
+  <link rel="stylesheet" href="css/toc.css">
+  <link rel="stylesheet" href="css/creator.css">
+</head>
+
+<body class="background">
+  <!-- E N D of floating header -->
+  <div class="outer-container">
+    <!-- Site header -->
+    <div class="site-header-wrapper main">
+      <div class="header site-header">
+        <div class="header-left">
+          <a class="hamburger button button-icon"></a>
+          <div class="logo">
+            <img id="globe" src="/img/globe.png" />
+            <div class="wordmark-tagline">
+              <img id="wordmark" src="/img/en-wordmark.svg" />
+              <img id="tagline" src="/img/en-tagline.svg" />
+            </div>
+          </div>
+        </div>
+        <div class="header-middle">
+          <!-- Search -->
+          <a class="button search-icon">
+            <img src="/img/search.svg" />
+          </a>
+          <div class="search-container" id="search-top">
+            <div class="search-icon"></div>
+            <input placeholder="Search Wikipedia" onfocus="checkVal()" class="search-input search-input-top"></input>
+            <button class="search-button" onclick="searchButtonClick()">
+              <p data-stringName="searchString">Search</p>
+              <img src="img/go.svg" />
+            </button>
+            <ul class="floating-menu searchResults"></ul>
+          </div>
+        </div>
+        <div class="header-right">
+          <!-- L O G G E D  O U T -->
+          <div class="user-links-container logged-out">
+            <a class="button detailed-menu">
+              <span data-stringname="signUpString">Create account</span>
+            </a>
+            <a class="button button-icon detailed-menu user-icon" onclick="toggleUserMenu()">
+              <img src="/img/more.svg">
+            </a>
+            <a class="button button-icon button-menu compact-menu user-icon" onclick="toggleUserMenu()">
+              <img src="/img/user.svg">
+              <img src="/img/down.svg">
+            </a>
+            <ul class="floating-menu user-menu">
+              <li class="compact-menu">
+                <img src="img/user.svg">
+                <span data-stringname="signUpString">Create account</span>
+              </li>
+              <li>
+                <img src="img/login.svg">
+                <span data-stringname="loginString">Log in</span>
+              </li>
+              <li class="text">
+                <span data-stringname="loggedOutMessageString">Pages for logged-out editors (<a href="">learn more</a>):</span>
+              </li>
+              <li>
+                <span data-stringname="discussionString">Talk</span>
+              </li>
+              <li>
+                <span data-stringname="contributionsString">Contributions</span>
+              </li>
+            </ul>
+          </div>
+          <!-- L O G G E D  I N -->
+          <div class="user-links-container logged-in">
+            <a class="button button-icon disabled"><img src="/img/bell.svg" /></a>
+            <a class="button button-icon disabled"><img src="/img/inbox.svg" /></a>
+            <a class="button detailed-menu">
+              <img src="/img/user.svg" />
+              <span>L May Alcott</span>
+            </a>
+            <a class="button button-icon detailed-menu user-icon" onclick="toggleUserMenu()">
+              <img src="/img/more.svg">
+            </a>
+            <a class="button button-icon button-menu compact-menu user-icon" onclick="toggleUserMenu()">
+              <img src="/img/user.svg">
+              <img src="/img/down.svg">
+            </a>
+            <ul class="floating-menu user-menu">
+              <li class="compact-menu">
+                <img src="/img/user.svg" />
+                <span>L May Alcott</span>
+              </li>
+              <li class="compact-menu">
+                <img src="img/bell.svg" />
+                <span data-stringName="alertsString">Alerts</span>
+              </li>
+              <li class="compact-menu">
+                <img src="img/inbox.svg" />
+                <span data-stringName="noticesString">Notices</span>
+              </li>
+              <li>
+                <img src="img/usertalk.svg" />
+                <span data-stringName="discussionString">Talk</span>
+              </li>
+              <li>
+                <img src="img/sandbox.svg" />
+                <span data-stringName="sandboxString">Sandbox</span>
+              </li>
+              <li>
+                <img src="img/preferences.svg" />
+                <span data-stringName="preferencesString">Preferences</span>
+              </li>
+              <li>
+                <img src="img/beta.svg" />
+                <span data-stringName="betaString">Beta</span>
+              </li>
+              <li>
+                <img src="img/watchlist.svg" />
+                <span data-stringName="watchlistString">Watchlist</span>
+              </li>
+              <li>
+                <img src="img/contribs.svg" />
+                <span data-stringName="contributionsString">Contributions</span>
+              </li>
+              <li>
+                <img src="img/languages.svg" />
+                <span data-stringName="contributionsString">Translations</span>
+              </li>
+              <li>
+                <img src="img/commons.svg" />
+                <span data-stringName="contributionsString">Uploaded media</span>
+              </li>
+              <li>
+                <span data-stringName="gadgetString">Gadget</span>
+              </li>
+              <li>18:05:22</li>
+              <li>
+                <img src="img/logout.svg" />
+                <span data-stringName="logoutString">Log out</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Page container -->
+    <div class="page-container">
+      <!-- Article page -->
+      <div class="columns">
+        <main class="article-container">
+          <div class="header article-toolbar">
+            <div class="header-left article-talk">
+              <div class="tab active"><a data-stringName="articleString">Article</a></div>
+              <div class="tab"><a data-stringName="discussionString">Talk</a></div>
+            </div>
+            <div class="header-right read-edit-history">
+              <div class="tab active"><a data-stringName="readString">Read</a></div>
+              <div class="tab"><a data-stringName="editString">Edit</a></div>
+              <div class="tab"><a data-stringName="historyString">View history</a></div>
+            </div>
+          </div>
+          <div class="article-body" onmouseup="mouseUp()">
+            <div class="header article-header">
+              <div class="header-left">
+                <h1 id="Introduction"></h1>
+              </div>
+              <div class="header-right">
+                <div class="languages-container languages-container">
+                  <div class="language-menu" data-stringName="languageMenuString">
+                    <img src="img/uls.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p id="new-operator" data-stringName="taglineString">From Wikipedia, the free encyclopedia</p>
+            <div class="mw-body mw-body-content content"></div>
+          </div>
+        </main>
+        <div id="creatorPanel">
+          <div class="creatorPanelContent">
+            <h3 class="title">Visual story builder</h3>
+            <p>Select text or an image from the article to begin building a visual story</p>
+            <div class="imagePanel" id="img1">image 1</div>
+            <div class="textPanel" id="keypoint1">key point 1</div>
+            <div class="imagePanel" id="img1">image 2</div>
+            <div class="textPanel" id="keypoint2">key point 2</div>
+            <div class="imagePanel" id="img3">image 3</div>
+            <div class="textPanel" id="keypoint3">key point 3</div>
+            <div class="imagePanel" id="img4">image 4</div>
+            <div class="textPanel" id="keypoint4">key point 4</div>
+            <div class="imagePanel" id="img5">image 5</div>
+            <div class="textPanel" id="keypoint5">key point 5</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div id="footer" role="contentinfo">
+      	<ul id="footer-info" class="">
+      		<li id="footer-info-lastmod"> This page was last edited on 2 April 2020, at 21:36<span class="anonymous-show">&nbsp;(UTC)</span>.</li>
+      		<li id="footer-info-copyright">Text is available under the <a rel="license" href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;additional terms may apply.  By using this site, you agree to the <a href="//foundation.wikimedia.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="//foundation.wikimedia.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="//www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+      	</ul>
+      	<ul id="footer-places" class="">
+      		<li id="footer-places-privacy"><a href="https://foundation.wikimedia.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+      		<li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+      		<li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+      		<li id="footer-places-contact"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+      		<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+      		<li id="footer-places-statslink"><a href="https://stats.wikimedia.org/#/en.wikipedia.org">Statistics</a></li>
+      		<li id="footer-places-cookiestatement"><a href="https://foundation.wikimedia.org/wiki/Cookie_statement">Cookie statement</a></li>
+      		<li id="footer-places-mobileview"><a href="//en.m.wikipedia.org/w/index.php?title=Hathor&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+      	   <li class="rt-enableItem"><a href="javascript:">Enable Reference Tooltips</a></li>
+           <li style="display: none;"><a href="#">Enable previews</a></li>
+        </ul>
+      	<ul id="footer-icons" class="noprint">
+      		<li id="footer-copyrightico"><a href="https://wikimediafoundation.org/"><img src="/img/mediawiki.png" width="88" height="31" alt="Wikimedia Foundation"></a></li>
+      		<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/img/wikimedia.png" alt="Powered by MediaWiki" width="88" height="31"></a></li>
+      	</ul>
+      	<div style="clear: both;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="addKeyPointpanel">
+    Create key point
+    <select name="points" id="keyPoints">
+      <option value="keypoint1">Key point 1</option>
+      <option value="keypoint2">Key point 2</option>
+      <option value="keypoint3">Key point 3</option>
+      <option value="keypoint4">Key point 4</option>
+      <option value="keypoint5">Key point 5</option>
+    </select>
+    <a class="button blue" onclick="addKeyPoint()">Add key point</a>
+  </div>
+
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous">
+  </script>
+  <script src="https://unpkg.com/headroom.js@0.10.3/dist/headroom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.10.3/jQuery.headroom.js"></script>
+  <script src="/js/search.js"></script>
+  <script src="/js/usermenu.js"></script>
+  <script src="/js/languages.js"></script>
+  <script src="/js/toc.js"></script>
+  <script src="/js/creator.js"></script>
+  <script src="/js/app.js"></script>
+
+</body>
+</html>

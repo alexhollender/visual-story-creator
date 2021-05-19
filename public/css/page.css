@@ -1,0 +1,227 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body .background {
+  background-color: #F8F9FA;
+}
+
+.outer-container {
+  position: relative;
+  max-width: 1650px;
+  min-width: 470px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 0 30px;
+  border-left: 1px solid #EAECF0;
+  border-right: 1px solid #EAECF0;
+}
+
+div.page-container {
+  max-width: 1440px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+div.page-container div.columns {
+  display: flex;
+}
+div.page-container main.article-container {
+  max-width: 960px;
+  padding: 10px 0 0 0;
+}
+div.page-container main.article-container.hide {
+  display: none;
+}
+div.page-container main.article-container.show-sidebar {
+  margin-left: 190px;
+  padding-left: 0px;
+}
+div.page-container main.article-container div.header.article-toolbar {
+  margin-bottom: -1px;
+  padding: 0;
+}
+div.page-container main.article-container div.header.article-toolbar .tab {
+  line-height: 32px;
+  background-image: linear-gradient(to top, #77c1f6 0, #e8f2f8 1px, #ffffff 100%);
+}
+div.page-container main.article-container div.header.article-toolbar .tab a {
+  font-size: 13px;
+  color: #3366cc;
+  padding: 15px 9px 9px 9px;
+  background-image: linear-gradient(to bottom, rgba(167, 215, 249, 0) 0, #a7d7f9 100%);
+  background-repeat: no-repeat;
+  background-size: 1px 100%;
+  background-position: right;
+}
+div.page-container main.article-container div.header.article-toolbar .tab.active {
+  background-image: none;
+  border-bottom: 1px solid white;
+}
+div.page-container main.article-container div.header.article-toolbar div.header-right.read-edit-history {
+  margin-right: 0;
+}
+div.page-container main.article-container div.article-body {
+  border: 1px solid #a7d7f9;
+  min-height: 1500px;
+  border-right-width: 0;
+  border-left-width: 0;
+  border-bottom-width: 0;
+  padding: 0 0.5em;
+}
+div.page-container main.article-container div.article-body div.article-header {
+  padding: 1em 0 0 0;
+  border-bottom: 1px solid #a2a9b1;
+}
+div.page-container main.article-container div.article-body div.article-header .header-left h1 {
+  font-family: "Linux Libertine", "Georgia", "Times", serif;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+div.page-container main.article-container div.article-body div.article-header .header-right div.languages-container {
+  cursor: pointer;
+  position: relative;
+}
+div.page-container main.article-container div.article-body div.article-header .header-right div.languages-container div.language-menu {
+  margin: 0;
+  width: max-content;
+  position: absolute;
+  right: 0px;
+  top: 33px;
+  z-index: 10;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+  display: none;
+}
+div.page-container main.article-container div.article-body div.article-header .header-right div.languages-container div.language-menu img {
+  width: 514px;
+}
+div.page-container main.article-container div.article-body div.article-header .header-right div.languages-container div.language-menu img:hover {
+  opacity: 1;
+}
+div.page-container main.article-container div.article-body p#new-operator {
+  margin-top: 0.75em;
+  font-size: 12px;
+}
+div.page-container main.article-container div.article-body .mw-body a {
+  color: #3366cc !important;
+}
+div.page-container main.article-container div.article-body div.mw-body.mw-body-content.content {
+  padding: 0.5em 0 1.5em 0;
+  margin-left: 0;
+  border: none;
+  overflow-x: hidden;
+}
+
+.history-page {
+  padding: 10px 0px;
+}
+.history-page.hide {
+  display: none;
+}
+.history-page.show-sidebar {
+  margin-left: 185px;
+}
+.history-page.show-sidebar .header-container {
+  margin-left: 1.5%;
+}
+.history-page .header-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.history-page .header.article-toolbar {
+  margin-bottom: -1px;
+}
+.history-page #content.mw-body {
+  border: none;
+  margin: 0;
+  border-top: 1px solid #a7d7f9;
+  padding: 24px 0.5em 0 0.5em;
+}
+
+img.history-image, img.article-image {
+  cursor: pointer;
+}
+
+.animation-checkbox {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: #eeeeee;
+  padding: 12px;
+  font-size: 13px;
+  transform: translateY(100%);
+}
+.animation-checkbox.open {
+  transform: translateY(0);
+}
+.animation-checkbox.open .close-panel {
+  background-image: url("/img/down-gray.svg");
+}
+.animation-checkbox .close-panel {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  top: -25px;
+  right: 0;
+  background-image: url("/img/up.svg");
+  background-size: cover;
+  cursor: pointer;
+}
+.animation-checkbox p {
+  margin-top: 6px;
+  border-bottom: 1px solid gray;
+}
+.animation-checkbox .group {
+  margin: 4px 0;
+  padding: 4px 0;
+}
+
+#footer {
+  margin: 50px 0;
+  padding: 2em 0;
+  border-top: 1px solid #a2a9b1;
+}
+
+@media (max-width: 725px) {
+  .outer-container {
+    padding: 0 15px;
+  }
+  .outer-container div.page-container main.article-container {
+    padding: 10px 15px 0 15px;
+  }
+}
+@media (min-width: 1422px) {
+  div.page-container main.article-container.show-sidebar {
+    margin: 0 auto;
+    padding: 10px 30px 0 30px;
+  }
+
+  div.sidebar-wrapper {
+    transition: all 300ms ease-out;
+  }
+}
+@media (min-width: 1500px) {
+  div.page-container div.sidebar-wrapper {
+    transform: translateX(-317px);
+  }
+  div.page-container div.sidebar-wrapper .sidebar {
+    min-width: 181px;
+    max-width: 181px;
+  }
+  div.page-container div.sidebar-wrapper img {
+    background-color: #fff;
+  }
+}
+@media (min-width: 1710px) {
+  body .outer-container {
+    border-left: 1px solid #EAECF090;
+    border-right: 1px solid #EAECF090;
+  }
+}
+
+/*# sourceMappingURL=page.css.map */

@@ -1,0 +1,171 @@
+div.site-header {
+  padding: 10px 0 5px 0;
+  position: relative;
+  z-index: 2;
+  align-items: center;
+}
+div.site-header div.header-left {
+  margin-right: 40px;
+}
+div.site-header div.header-left .hamburger {
+  align-self: center;
+  margin-right: 20px;
+  width: 20px;
+  background-image: url(/img/menu.svg);
+  background-size: auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+div.site-header div.header-left .hamburger.close {
+  background-image: url(/img/close.svg);
+}
+div.site-header div.header-left .hamburger:hover {
+  opacity: 1;
+}
+div.site-header div.header-left .logo {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+div.site-header div.header-left .logo #globe {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+div.site-header div.header-left .logo .wordmark-tagline {
+  display: flex;
+  flex-direction: column;
+}
+div.site-header div.header-left .logo .wordmark-tagline #wordmark {
+  margin-bottom: 5px;
+}
+div.site-header .header-middle {
+  flex-grow: 1;
+  min-width: 0;
+}
+div.site-header .header-right {
+  margin: 0 0 0 20px;
+  z-index: -2;
+  position: relative;
+}
+div.site-header .header-right .compact-menu {
+  display: none;
+}
+div.site-header .header-right .user-links-container {
+  align-items: center;
+  justify-content: flex-end;
+}
+div.site-header .header-right .user-links-container.logged-in {
+  display: none;
+}
+div.site-header .header-right .user-links-container.logged-out {
+  display: flex;
+}
+div.site-header .header-right .user-links-container.logged-out ul {
+  width: 180px;
+}
+div.site-header .header-right .user-links-container.logged-out ul li.text {
+  border-top: 1px solid #cccccc;
+  padding: 15px 15px 4px 15px;
+  font-weight: 500;
+  color: #54595D;
+}
+div.site-header .header-right .user-links-container.logged-out ul li.text:hover {
+  cursor: default;
+  background: none;
+}
+div.site-header .header-right .user-links-container.logged-out ul li:last-child {
+  border: none;
+}
+div.site-header .header-right .user-links-container.visible {
+  display: flex;
+}
+div.site-header .header-right .user-links-container ul {
+  top: 32px;
+  right: 0px;
+  font-size: 14px;
+  font-weight: 500;
+}
+div.site-header .header-right .user-links-container ul li:first-child, div.site-header .header-right .user-links-container ul li.compact-menu + li {
+  padding-top: 10px;
+}
+div.site-header .header-right .user-links-container ul li:last-child {
+  border-top: 1px solid #cccccc;
+  padding: 10px 15px 8px 15px;
+}
+div.site-header .header-right .user-links-container ul li img {
+  margin-right: 8px;
+}
+
+div.article-title {
+  border-bottom: 1px solid #a2a9b1;
+}
+div.article-title .header-left h1 {
+  border-bottom: none;
+  margin: 0 !important;
+}
+
+body.loggedIn div.site-header .header-right .user-links-container.logged-in {
+  display: flex;
+}
+body.loggedIn div.site-header .header-right .user-links-container.logged-out {
+  display: none;
+}
+
+@media (max-width: 875px) {
+  div.site-header div.header-left #globe {
+    display: none;
+  }
+  div.site-header div.header-right {
+    flex-grow: 0;
+    margin: 0 0 0 15px;
+  }
+  div.site-header div.header-right .detailed-menu {
+    display: none;
+  }
+  div.site-header div.header-right .compact-menu {
+    display: flex;
+  }
+}
+@media (max-width: 675px) {
+  body.loggedIn div.site-header {
+    margin-right: auto;
+  }
+  body.loggedIn div.site-header div.header-left {
+    flex-grow: 1;
+  }
+  body.loggedIn div.site-header div.header-middle {
+    flex-grow: 0;
+  }
+  body.loggedIn div.site-header div.header-middle a.search-icon {
+    display: flex;
+  }
+  body.loggedIn div.site-header div.header-middle div.search-container {
+    display: none;
+  }
+  body.loggedIn div.site-header div.header-right {
+    margin: 0;
+  }
+}
+@media (max-width: 575px) {
+  div.site-header {
+    margin-right: auto;
+  }
+  div.site-header div.header-left {
+    flex-grow: 1;
+  }
+  div.site-header div.header-middle {
+    flex-grow: 0;
+  }
+  div.site-header div.header-middle a.search-icon {
+    display: flex;
+  }
+  div.site-header div.header-middle div.search-container {
+    display: none;
+  }
+  div.site-header div.header-right {
+    margin: 0;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */

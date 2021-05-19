@@ -1,0 +1,28 @@
+#creatorPanel {
+  margin-left: 25px;
+  border-left: 1px solid #EAECF0;
+  max-width: 400px;
+}
+#creatorPanel .creatorPanelContent {
+  margin-left: 20px;
+}
+#creatorPanel .creatorPanelContent .imagePanel, #creatorPanel .creatorPanelContent .textPanel {
+  background: #F8F9FA;
+  border: 1px dashed #A2A9B1;
+  border-radius: 4px;
+  padding: 30px;
+  margin: 0 0 20px 0;
+}
+
+#addKeyPointpanel {
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+  background: white;
+  position: absolute;
+  display: none;
+  border: 1px solid gray;
+  padding: 15px;
+}
+
+/*# sourceMappingURL=creator.css.map */
