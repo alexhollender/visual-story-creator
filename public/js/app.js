@@ -67,11 +67,11 @@ const switchLoginState = () => {
 };
 
 // turn on floating header from hover
-$( 'header' ).hover( function () {
+$( 'header' ).on( 'hover', function () {
 	$( this ).addClass( 'headroom--pinned' );
 } );
 
-$( document ).ready( function () {
+$( function () {
 
 	getLanguageFromURL();
 	getPageTitleFromUrl();
@@ -81,7 +81,7 @@ $( document ).ready( function () {
 		offset: 100
 	} );
 
-	$( window ).blur( function () {
+	$( window ).on( 'blur', function () {
 		$( 'header' ).addClass( 'headroom--pinned' );
 		$( 'header' ).removeClass( 'headroom--unpinned' );
 	} );
