@@ -47,7 +47,8 @@
   width: 100%;
   height: auto;
 }
-.page-container .panel-wrapper #addKeyPointpanel, .page-container .panel-wrapper #addKeyImagepanel {
+
+#addKeyPointpanel, #addKeyImagepanel {
   width: 150px;
   border-radius: 5px;
   background: white;
@@ -56,16 +57,16 @@
   border: 1px solid gray;
   padding: 15px;
 }
-.page-container .panel-wrapper #addKeyPointpanel p, .page-container .panel-wrapper #addKeyImagepanel p {
+#addKeyPointpanel p, #addKeyImagepanel p {
   margin: 0 0 10px 0;
 }
-.page-container .panel-wrapper #addKeyPointpanel select, .page-container .panel-wrapper #addKeyImagepanel select {
+#addKeyPointpanel select, #addKeyImagepanel select {
   width: 100%;
   height: 30px;
   font-size: 14px;
   margin: 0 0 10px 0;
 }
-.page-container .panel-wrapper #addKeyPointpanel a, .page-container .panel-wrapper #addKeyImagepanel a {
+#addKeyPointpanel a, #addKeyImagepanel a {
   margin-bottom: 10px;
 }
 

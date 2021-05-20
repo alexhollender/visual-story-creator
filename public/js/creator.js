@@ -20,6 +20,12 @@ function positionPanel( panelName, rectange ) {
 	$( panelName ).show();
 }
 
+function scrollToNew(number, type) {
+  if ( number > 1) {
+    document.getElementById( type + number ).scrollIntoView( {behavior: "smooth"} );
+  }
+}
+
 // highlighting text > showing the key points panel
 // eslint-disable-next-line no-unused-vars
 function mouseUp() {
@@ -53,12 +59,13 @@ $( 'body' ).on( 'click', 'img', function ( e ) {
 // eslint-disable-next-line no-unused-vars
 function addKeyPoint() {
 	// eslint-disable-next-line no-jquery/no-sizzle
-	const target = $( '#keyPoints option:selected' ).val();
-	$( `#keypoint${target}` )
+	const destination = $( '#keyPoints option:selected' ).val();
+	$( `#keypoint${destination}` )
 		.html( '' )
 		.append( $( '<p>' ).append( fragment ) );
 	$( '#addKeyPointpanel' ).hide();
-	keyPoints[ target ] = $( `#keypoint${target}` ).html();
+	keyPoints[ destination ] = $( `#keypoint${destination}` ).html();
+  scrollToNew(destination, 'keypoint');
 }
 
 // adding a key image
@@ -70,6 +77,7 @@ function addKeyImage() {
 	$( '#addKeyImagepanel' ).hide();
 	$( 'img' ).css( 'border', 'none' );
 	keyImages[ destination ] = image.cloneNode();
+  scrollToNew(destination, 'img');
 }
 
 function saveWikitext( wikitext ) {
