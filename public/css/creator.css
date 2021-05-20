@@ -43,7 +43,7 @@
   margin: 0 0 20px 0;
   padding: 10px;
 }
-.page-container .panel-wrapper #creatorPanel .imagePanel img, .page-container .panel-wrapper #creatorPanel .textPanel img {
+.page-container .panel-wrapper #creatorPanel .imagePanel img {
   width: 100%;
   height: auto;
 }
