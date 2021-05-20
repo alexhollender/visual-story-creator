@@ -19,6 +19,8 @@ function mouseUp() {
         var left = Math.floor(rect.left) + 'px';
         keyPointsPanel.style.top = top;
         keyPointsPanel.style.left = left;
+        $('img').css('border', 'none');
+        $('#addKeyImagepanel').hide();
         $('#addKeyPointpanel').show();
     } else {
       // hide both panels
@@ -40,6 +42,7 @@ $('body').on('click', 'img', function(e){
   var left = Math.floor(imgLocation.left) + 'px';
   keyImagesPanel.style.top = top;
   keyImagesPanel.style.left = left;
+  $('#addKeyPointpanel').hide();
   $('#addKeyImagepanel').show();
 });
 

@@ -22,11 +22,21 @@
 
 #addKeyPointpanel, #addKeyImagepanel {
   width: 150px;
-  height: 150px;
   border-radius: 5px;
   background: white;
   position: fixed;
   display: none;
   border: 1px solid gray;
   padding: 15px;
+
+  p {
+    margin: 0 0 10px 0;
+  }
+
+  select {
+    width: 100%;
+    height: 30px;
+    font-size: 14px;
+    margin: 0 0 10px 0;
+  }
 }

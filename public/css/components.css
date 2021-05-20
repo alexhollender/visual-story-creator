@@ -9,6 +9,7 @@ a.button {
   font-weight: 700;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 a.button img {
   opacity: 0.75;
