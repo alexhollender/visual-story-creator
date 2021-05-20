@@ -1,0 +1,12 @@
+{
+	"extends": [
+		"wikimedia/client-es6",
+		"wikimedia/jquery"
+	],
+	"rules": {
+		"no-console": "warn",
+		"no-implicit-globals": "off",
+		"no-jquery/no-class-state": "off",
+		"no-jquery/no-global-selector": "off"
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"scripts": {
+		"test": "eslint .",
+		"build": "sass public/scss:public/css",
+		"watch": "sass --watch public/scss:public/css",
+		"serve": "firebase serve"
+	},
+	"devDependencies": {
+		"eslint-config-wikimedia": "^0.20.0",
+		"firebase-tools": "^9.11.0",
+		"sass": "^1.32.13"
+	}
+}
