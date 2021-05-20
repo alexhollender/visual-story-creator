@@ -1,12 +1,22 @@
-#creatorPanel .creatorPanelContent > p {
+#creatorPanel h3 {
+  position: sticky;
+  top: 0;
+  background: #F8F9FA;
+  border-bottom: 1px solid #eaeaea;
+}
+#creatorPanel > p {
   margin-bottom: 30px;
   line-height: 22px;
 }
-#creatorPanel .creatorPanelContent .imagePanel, #creatorPanel .creatorPanelContent .textPanel {
+#creatorPanel .imagePanel, #creatorPanel .textPanel {
   border: 1px dashed #A2A9B1;
   border-radius: 4px;
   margin: 0 0 20px 0;
   padding: 10px;
+}
+#creatorPanel .imagePanel img, #creatorPanel .textPanel img {
+  width: 100%;
+  height: auto;
 }
 
 #addKeyPointpanel, #addKeyImagepanel {

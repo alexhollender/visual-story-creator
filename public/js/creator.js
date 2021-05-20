@@ -6,11 +6,13 @@ var keyPointsPanel = document.getElementById('addKeyPointpanel');
 var keyImagesPanel = document.getElementById('addKeyImagepanel');
 var keyPoints = [];
 
+// removes border on any image, hides add image panel
 function cleanupImages() {
   $('#addKeyImagepanel').hide();
   $('img').css('border', 'none');
 }
 
+// position the relevant panel near selected text/image
 function positionPanel(panelName, rectange) {
   panelName.style.top = Math.floor(rectange.top + rectange.height + 10) + 'px';
   panelName.style.left = Math.floor(rectange.left) + 'px';
