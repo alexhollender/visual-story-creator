@@ -1,4 +1,4 @@
-/* global uiLang */
+/* global uiLang, currentPageTitle */
 
 // current text selection
 let fragment;
@@ -72,6 +72,28 @@ function addKeyImage() {
 	keyImages[ destination ] = image.cloneNode();
 }
 
+function saveWikitext( wikitext ) {
+	const $form = $( '<form>' ).attr( { method: 'post', enctype: 'multipart/form-data' } ).addClass( 'oo-ui-element-hidden' );
+	const params = {
+		format: 'text/x-wiki',
+		model: 'wikitext',
+		// oldid: this.requestedRevId,
+		// wpStarttime: this.startTimeStamp,
+		// wpEdittime: this.baseTimeStamp,
+		wpTextbox1: wikitext,
+		// wpEditToken: mw.user.tokens.get( 'csrfToken' ),
+		wpUnicodeCheck: 'ℳ𝒲♥𝓊𝓃𝒾𝒸ℴ𝒹ℯ',
+		wpUltimateParam: true
+	};
+	// Add params as hidden fields
+	for ( const key in params ) {
+		$form.append( $( '<input>' ).attr( { type: 'hidden', name: key, value: params[ key ] } ) );
+	}
+	// Submit the form, mimicking a traditional edit
+	// Firefox requires the form to be attached
+	$form.attr( 'action', `https://${uiLang}.wikipedia.org/w/index.php?title=User:AHollender_(WMF)/story/${currentPageTitle}&action=submit` ).appendTo( 'body' ).trigger( 'submit' );
+}
+
 // eslint-disable-next-line no-unused-vars
 function convertToWikitext() {
 	let html = '';
@@ -99,7 +121,7 @@ function convertToWikitext() {
 	} ).then( function ( resp ) {
 		// Trim, and remove excess linbreaks
 		const wikitext = resp.trim().replace( /\n{3,}/g, '\n\n' );
-		console.log( wikitext );
+		saveWikitext( wikitext );
 	} );
 }
 
