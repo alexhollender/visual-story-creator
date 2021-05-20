@@ -5,6 +5,7 @@ var image;
 var keyPointsPanel = document.getElementById('addKeyPointpanel');
 var keyImagesPanel = document.getElementById('addKeyImagepanel');
 var keyPoints = [];
+var keyImages = [];
 
 function cleanupImages() {
   $('#addKeyImagepanel').hide();
@@ -58,20 +59,38 @@ function addKeyPoint() {
 // adding a key image
 function addKeyImage() {
   var destination = $("#keyImages option:selected").val();
-  $(`#${destination}`).html(image);
+  $(`#img${destination}`).html(image);
   $('#addKeyImagepanel').hide();
   $('img').css('border', 'none');
+  keyImages[destination] = image.cloneNode();
 }
 
 function convertToWikitext() {
+  var html = '';
+  for (var i = 0, l = Math.max(keyPoints.length, keyImages.length); i < l; i++) {
+    if (keyImages[i]) {
+      var $p = $('<div>')
+        .addClass('keyImage')
+        .append(
+          $('<a>')
+            .attr('href', image.getAttribute('resource'))
+            .append(
+              $(image).attr({width: 480, height: null})
+            )
+        );
+      html += '\n' + $p[0].outerHTML;
+    }
+    if (keyPoints[i]) {
+      html += '\n' + $('<div>').addClass('keyPoint').html(keyPoints[i])[0].outerHTML;
+    }
+  }
   $.post(`https://${uiLang}.wikipedia.org/api/rest_v1/transform/html/to/wikitext`, {
-    // Add empty <p> between snippets, as they may not be <p>-wrapped
-    html: keyPoints.join('<p></p>'),
+    html: html,
     scrub_wikitext: 1
   }).then(function(resp) {
     // Trim, and remove excess linbreaks
     var wikitext = resp.trim().replace(/\n{3,}/g, '\n\n');
-    console.log(wkitext);
+    console.log(wikitext);
   });
 }
 
