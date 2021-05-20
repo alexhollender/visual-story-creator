@@ -6,9 +6,7 @@
   border: 1px dashed #A2A9B1;
   border-radius: 4px;
   margin: 0 0 20px 0;
-}
-#creatorPanel .creatorPanelContent .imagePanel p, #creatorPanel .creatorPanelContent .textPanel p {
-  padding: 30px;
+  padding: 10px;
 }
 
 #addKeyPointpanel, #addKeyImagepanel {

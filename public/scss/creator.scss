@@ -1,10 +1,6 @@
 #creatorPanel {
 
   .creatorPanelContent {
-
-    .title {
-    }
-
     > p {
       margin-bottom: 30px;
       line-height: 22px;
@@ -14,11 +10,9 @@
       border: 1px dashed #A2A9B1;
       border-radius: 4px;
       margin: 0 0 20px 0;
-
-      p { padding: 30px; }
+      padding: 10px;
     }
   }
-
 }
 
 #addKeyPointpanel, #addKeyImagepanel {

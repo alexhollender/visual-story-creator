@@ -1,9 +1,10 @@
 // current text selection
-var text;
+var fragment;
 // current image selection
 var image;
 var keyPointsPanel = document.getElementById('addKeyPointpanel');
 var keyImagesPanel = document.getElementById('addKeyImagepanel');
+var keyPoints = [];
 
 function cleanupImages() {
   $('#addKeyImagepanel').hide();
@@ -22,12 +23,10 @@ function mouseUp() {
   var strLength = window.getSelection().toString().length;
   if (strLength > 10) {
     // as document fragment
-    text = textObj.getRangeAt(0).cloneContents();
-    // as string
-    // text = window.getSelection().toString();
-      var rect = textObj.getRangeAt(0).getBoundingClientRect();
-      positionPanel(keyPointsPanel, rect);
-      cleanupImages();
+    fragment = textObj.getRangeAt(0).cloneContents();
+    var rect = textObj.getRangeAt(0).getBoundingClientRect();
+    positionPanel(keyPointsPanel, rect);
+    cleanupImages();
   } else {
     // hide both panels
     $('#addKeyPointpanel').hide();
@@ -49,8 +48,11 @@ $('body').on('click', 'img', function(e){
 // adding a key point
 function addKeyPoint() {
   var target = $("#keyPoints option:selected").val();
-  $(`#${target}`).html(text);
+  $(`#keypoint${target}`)
+    .html('')
+    .append($('<p>').append(fragment));
   $('#addKeyPointpanel').hide();
+  keyPoints[target] = $(`#keypoint${target}`).html();
 }
 
 // adding a key image
@@ -59,6 +61,18 @@ function addKeyImage() {
   $(`#${destination}`).html(image);
   $('#addKeyImagepanel').hide();
   $('img').css('border', 'none');
+}
+
+function convertToWikitext() {
+  $.post(`https://${uiLang}.wikipedia.org/api/rest_v1/transform/html/to/wikitext`, {
+    // Add empty <p> between snippets, as they may not be <p>-wrapped
+    html: keyPoints.join('<p></p>'),
+    scrub_wikitext: 1
+  }).then(function(resp) {
+    // Trim, and remove excess linbreaks
+    var wikitext = resp.trim().replace(/\n{3,}/g, '\n\n');
+    console.log(wkitext);
+  });
 }
 
 // prevent links
