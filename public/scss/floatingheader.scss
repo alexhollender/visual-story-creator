@@ -13,9 +13,9 @@ header {
   transition: all 250ms linear;
 
   .header {
-    max-width: 1660px;
+    max-width: 1500px;
     margin: 0 auto;
-    padding: 6px 25px;
+    padding: 6px 40px;
     justify-content: unset;
 
     > div {
@@ -23,8 +23,7 @@ header {
     }
 
     .header-left {
-      .logo-icon {
-        background-color: #ffffff;
+      .logo-icon { background-color: #ffffff;
         &:hover { background-color: rgba(0, 24, 73, 0.02745098); }
         &.subheader { display: none; }
       }
@@ -107,7 +106,7 @@ header {
       }
 
       .user-icon {
-        background-color: #ffffff;
+        background: #ffffff;
         &:hover { background-color: rgba(0, 24, 73, 0.02745098); }
       }
 
@@ -158,6 +157,10 @@ header {
     .subheader {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    & ~ div.outer-container div.page-container div.toc-wrapper  {
+      top: 60px;
     }
   }
 

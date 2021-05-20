@@ -152,8 +152,13 @@ $('ul.searchResults').hover(function() {
 
 // clicking on the search button
 const searchButtonClick = () => {
-  var pageName = $('input.search-input').val().replace(/ /g,'_');
-  location = `/${pageName}`;
+  // find the relevant search field
+  var button = event.target;
+  var parent = $(button).parents('.search-container');
+  var inputVal = $(parent).children('input').val();
+  var pageNameUrl = inputVal.replace(/ /g,'_');
+  // navigate to page
+  location = `/${pageNameUrl}`;
 }
 
 // expand search in floating header
@@ -163,16 +168,6 @@ const showStickySearch = () => {
   $('header').addClass('headroom--pinned');
   $('header .article-title-subheader').hide();
   document.getElementById('floating-search-input').focus();
-};
-
-// close search
-const closeSearch = () => {
-  $('ul.searchResults').hide();
-  selectedItemIndex = 0;
-  $('.search-container').removeClass('active');
-  $('a.search-icon.subheader').show();
-  $('#search-floating').hide();
-  $('header .article-title-subheader').show();
 };
 
 $(document).ready(function() {
@@ -196,9 +191,8 @@ $(document).ready(function() {
 	});
 
   // when clicking on a search result
-	$(document).on('click', '#search-floating ul.searchResults li', function() {
-    console.log('yazi');
-    $('input').val('');
+	$(document).on('click', 'ul.searchResults li', function() {
+    // $('input').val('');
     $('ul.searchResults').html('');
     $('ul.searchResults').hide();
     var pageName = $(this).find('.title').html().replace(/ /g,'_');
@@ -213,6 +207,7 @@ $(document).ready(function() {
     $('a.search-icon.subheader').show();
     $('#search-floating').hide();
     $('header .article-title-subheader').show();
+    $('.search-input').val('');
   });
 
   // when clicking the input prevent that click from triggering the above function that

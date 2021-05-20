@@ -7,7 +7,6 @@ let headingsObject = [];
 function getPageTitleFromUrl() {
   currentPageTitle = window.location.pathname.replace(/^\/+/g, '').replace(/_/g, ' ');
   getPage(currentPageTitle);
-  getSections(currentPageTitle);
 };
 
 // gets page HTML from restbase API
@@ -28,16 +27,12 @@ function getPage(title) {
     $('main .languages-container').prepend(langSwitcher);
     // reset the <base> URL
     $('base').attr('href','');
-    // observe which section is currently in view
-    document.querySelectorAll('.mw-body > section').forEach((section) => {
-     observer.observe(section);
-   });
   });
 };
 
 // open/close sidebar
 const toggleSidebar = () => {
-  $('div.sidebar-wrapper, main, .history-page').toggleClass('show-sidebar');
+  $('div.sidebar-wrapper, .page-container, .history-page').toggleClass('show-sidebar');
   $('a.hamburger').toggleClass('close');
 };
 

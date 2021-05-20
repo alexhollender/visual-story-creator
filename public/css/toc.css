@@ -1,82 +1,127 @@
-.toc-wrapper {
-  min-width: 150px;
-  max-width: 150px;
-  max-height: 44px;
-  overflow: hidden;
-  border: 1px solid #a2a9b1;
-  background-color: #f8f9fa;
-}
-.toc-wrapper.expanded {
-  min-width: fit-content;
-  max-width: fit-content;
+.page-container .toc-wrapper {
+  min-width: 280px;
+  max-width: 280px;
   height: fit-content;
-  max-height: fit-content;
-  padding: 0 15px;
+  max-height: 90vh;
+  margin: 50px 40px 0 10px;
+  position: sticky;
+  top: 22px;
+  overflow: scroll;
+  background: #F8F9FA;
+  border-radius: 4px;
+  padding: 5px 5px 16px 20px;
+  transition: all 300ms;
 }
-.toc-wrapper.expanded .toc-header {
-  border: none;
+.page-container .toc-wrapper::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.page-container .toc-wrapper::-webkit-scrollbar:vertical {
+  width: 11px;
+}
+.page-container .toc-wrapper::-webkit-scrollbar:horizontal {
+  height: 11px;
+}
+.page-container .toc-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid white;
+  /* should match background, can't be transparent */
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.page-container .toc-wrapper .toc-header {
+  padding: 12px;
+  justify-content: start;
   padding-left: 0;
-  background: none;
+  padding-left: 10px;
 }
-.toc-wrapper.expanded .toc-header .contents-title {
-  font-weight: bold;
-}
-.toc-wrapper.expanded .toc-header .contents-show {
+.page-container .toc-wrapper .toc-header .contents-show {
   display: none;
 }
-.toc-wrapper.expanded .toc-header .contents-hide {
+.page-container .toc-wrapper .toc-header .contents-hide {
   display: block;
 }
-.toc-wrapper .toc-header {
-  padding: 10px;
-  margin-right: 10px;
-  border-radius: 2px;
-  justify-content: center;
-}
-.toc-wrapper .toc-header .contents-title {
+.page-container .toc-wrapper .toc-header .contents-title {
+  font-weight: bold;
   font-size: 16px;
   margin: 0;
 }
-.toc-wrapper .toc-header .contents-show, .toc-wrapper .toc-header .contents-hide {
+.page-container .toc-wrapper .toc-header .contents-show, .page-container .toc-wrapper .toc-header .contents-hide {
   color: #3366cc;
   cursor: pointer;
   margin: 0;
   padding: 0 0 2px 7px;
   font-size: 13px;
 }
-.toc-wrapper .toc-header .contents-hide {
+.page-container .toc-wrapper .toc-header .contents-hide {
   display: none;
 }
-.toc-wrapper ul {
+.page-container .toc-wrapper ul {
   font-size: 14px;
   list-style-type: none;
   margin: 0;
   line-height: 18px;
+  padding-right: 5px;
 }
-.toc-wrapper ul li.toc-level-1 a {
+.page-container .toc-wrapper ul li.active {
+  font-weight: bold;
+}
+.page-container .toc-wrapper ul li.toc-level-1 {
+  padding-left: 10px;
+  position: relative;
+}
+.page-container .toc-wrapper ul li.toc-level-1 a {
   color: #3366cc;
 }
-.toc-wrapper ul li.toc-level-2 {
-  margin-left: 10px;
+.page-container .toc-wrapper ul li.toc-level-1 li {
+  display: none;
+}
+.page-container .toc-wrapper ul li.toc-level-1.show-children li {
+  display: block;
+}
+.page-container .toc-wrapper ul li.toc-level-1.parent span {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid transparent;
+  /* left arrow slant */
+  border-top: 5px solid transparent;
+  /* right arrow slant */
+  border-left: 5px solid #000000;
+  /* bottom, add background color here */
+  font-size: 0;
+  line-height: 0;
+  left: -2px;
+  top: 4px;
+  cursor: pointer;
+}
+.page-container .toc-wrapper ul li.toc-level-1.parent.show-children span {
+  transform: rotate(90deg);
+}
+.page-container .toc-wrapper ul li.toc-level-2 {
   font-weight: normal;
 }
-.toc-wrapper ul li.toc-level-3 {
-  margin-left: 20px;
+.page-container .toc-wrapper ul li.toc-level-2 a {
+  color: black !important;
 }
-.toc-wrapper ul li.toc-level-4 {
-  margin-left: 30px;
+.page-container .toc-wrapper ul li.toc-level-3 {
+  margin-left: 8px;
 }
-.toc-wrapper ul li a {
+.page-container .toc-wrapper ul li.toc-level-4 {
+  margin-left: 16px;
+}
+.page-container .toc-wrapper ul li a {
   transition: all 300ms;
 }
-.toc-wrapper ul li a:hover {
+.page-container .toc-wrapper ul li a:hover {
   opacity: 0.8;
 }
-.toc-wrapper ul .tocnumb {
+.page-container .toc-wrapper ul .tocnumb {
+  display: none;
   margin-right: 5px;
   color: black;
+  font-weight: normal;
 }
-.toc-wrapper ul .toctext {
+.page-container .toc-wrapper ul .toctext {
   padding-bottom: 5px;
 }
 

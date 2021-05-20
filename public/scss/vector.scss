@@ -1,4 +1,8 @@
 /************======== V E C T O R  S T Y L E S ========************/
+table.nomobile {
+	display: none;
+}
+
 #pt-notifications-alert .mw-echo-notifications-badge,
 #pt-notifications-notice .mw-echo-notifications-badge {
 	position: relative;
@@ -4043,7 +4047,8 @@ body>.oo-ui-windowManager,
 		font-family: sans-serif
 	}
 	body {
-		background-color: #f6f6f6;
+		// background-color: #f6f6f6;
+		background-color: #ffffff;
 		overflow-y: scroll
 	}
 	.mw-body,

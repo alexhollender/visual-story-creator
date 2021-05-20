@@ -12,6 +12,6 @@ $(document).on('click', 'body', () => {
   $('ul.user-menu').hide();
 });
 
-$('.user-icon').on('click', function (event) {
+$('#loggedOutUserMenuButton, #loggedInUserMenuButton, .user-icon').on('click', function (event) {
   event.stopPropagation();
 });

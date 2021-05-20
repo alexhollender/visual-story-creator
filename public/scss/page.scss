@@ -2,8 +2,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
   padding: 0;
-
-  .background { background-color: #F8F9FA; }
 }
 
 // -----------------------------
@@ -11,12 +9,12 @@ body {
 // -----------------------------
 .outer-container {
   position: relative;
-  max-width: 1650px;
+  max-width: 1490px;
   min-width: 470px;
   margin: 0 auto;
-  overflow: hidden;
+  // overflow: hidden;
   background-color: #fff;
-  padding: 0 30px;
+  padding: 0 40px;
   border-left: 1px solid #EAECF0;
   border-right: 1px solid #EAECF0;
 }
@@ -25,28 +23,52 @@ body {
 // P A G E  C O N T A I N E R
 // --------------------------
 div.page-container {
-  max-width: 1440px;
-  display: block;
-  margin: 0 auto;
+  // max-width: 1440px;
+  display: flex;
+  // margin: 0 auto;
   position: relative;
 
-  div.columns {
-    display: flex;
+  div.sidebar-wrapper {
+    transform: translateX(calc(-100% - 40px));
+    position: absolute;
+    z-index: 10;
+    padding-top: 1px;
+    transition: all 300ms ease-out;
+    &.show-sidebar {
+      transform: translateX(-20px);
+    }
+
+    .sidebar {
+      min-width: 255px;
+      max-width: 255px;
+      margin-top: 5px;
+      background: linear-gradient(to bottom, #ffffff 0%,#f6f6f6 5%,#f6f6f6 50%,#f6f6f6 90%,#ffffff 100%);
+    }
+
+    img {
+      width: 130px;
+      margin-bottom: 20px;
+      padding: 28px 94px 35px 30px;
+      background-color: #ffffff;
+    }
   }
 
   // wraps article toolbar + article title + article
   main.article-container {
     max-width: 960px;
-    padding: 10px 0 0 0;
+    // to manage certain pages that break the layout
+    overflow-x: hidden;
+    margin: 0 10px 0 0;
+    // padding: 10px 30px 0 30px;
 
     &.hide {
       display: none;
     }
 
-    &.show-sidebar {
-      margin-left: 190px;
-      padding-left: 0px;
-    }
+    // &.show-sidebar {
+    //   margin-left: 190px;
+    //   padding-left: 0px;
+    // }
 
     div.header.article-toolbar {
       margin-bottom: -1px;
@@ -247,17 +269,17 @@ img.history-image, img.article-image {
 // above 1423px
 // (magic number when sidebar can open w/o content shifting in article view)
 @media (min-width: 1422px) {
-  div.page-container {
-    main.article-container {
-      &.show-sidebar {
-        margin: 0 auto;
-        padding: 10px 30px 0 30px;
-      }
-    }
-  }
-  div.sidebar-wrapper {
-    transition: all 300ms ease-out;
-  }
+  // div.page-container {
+  //   main.article-container {
+  //     &.show-sidebar {
+  //       margin: 0 auto;
+  //       padding: 10px 30px 0 30px;
+  //     }
+  //   }
+  // }
+  // div.sidebar-wrapper {
+  //   transition: all 300ms ease-out;
+  // }
 }
 
 // above 1500px
@@ -266,16 +288,16 @@ img.history-image, img.article-image {
 @media (min-width: 1500px) {
   div.page-container {
     div.sidebar-wrapper {
-      transform: translateX(-317px);
+      transform: translateX(calc(-100% - 200px));
 
-      .sidebar {
-        min-width: 181px;
-        max-width: 181px;
-      }
+      // .sidebar {
+      //   min-width: 181px;
+      //   max-width: 181px;
+      // }
 
-      img {
-        background-color: #fff;
-      }
+      // img {
+      //   background-color: #fff;
+      // }
     }
   }
 }

@@ -1,17 +1,14 @@
-#creatorPanel {
-  margin-left: 25px;
-  border-left: 1px solid #EAECF0;
-  max-width: 400px;
-}
-#creatorPanel .creatorPanelContent {
-  margin-left: 20px;
+#creatorPanel .creatorPanelContent > p {
+  margin-bottom: 30px;
+  line-height: 22px;
 }
 #creatorPanel .creatorPanelContent .imagePanel, #creatorPanel .creatorPanelContent .textPanel {
-  background: #F8F9FA;
   border: 1px dashed #A2A9B1;
   border-radius: 4px;
-  padding: 30px;
   margin: 0 0 20px 0;
+}
+#creatorPanel .creatorPanelContent .imagePanel p, #creatorPanel .creatorPanelContent .textPanel p {
+  padding: 30px;
 }
 
 #addKeyPointpanel, #addKeyImagepanel {
@@ -31,6 +28,9 @@
   height: 30px;
   font-size: 14px;
   margin: 0 0 10px 0;
+}
+#addKeyPointpanel a, #addKeyImagepanel a {
+  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=creator.css.map */

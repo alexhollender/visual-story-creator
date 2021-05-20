@@ -2,7 +2,7 @@
 // S I T E  H E A D E R
 // --------------------------
 div.site-header {
-  padding: 10px 0 5px 0;
+  padding: 10px 0 15px 0;
   position: relative;
   z-index: 2;
   align-items: center;
@@ -12,7 +12,7 @@ div.site-header {
 
     .hamburger {
       align-self: center;
-      margin-right: 20px;
+      margin-right: 14px;
       width: 20px;
       background-image: url(/img/menu.svg);
       background-size: auto;

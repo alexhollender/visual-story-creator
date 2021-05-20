@@ -13,26 +13,26 @@ function cleanupImages() {
 function positionPanel(panelName, rectange) {
   panelName.style.top = Math.floor(rectange.top + rectange.height + 10) + 'px';
   panelName.style.left = Math.floor(rectange.left) + 'px';
+  $(panelName).show();
 }
 
 // highlighting text > showing the key points panel
 function mouseUp() {
-    var textObj = window.getSelection();
-    var strLength = window.getSelection().toString().length;
-    if (strLength > 10) {
-      // as document fragment
-      text = textObj.getRangeAt(0).cloneContents();
-      // as string
-      // text = window.getSelection().toString();
-        var rect = textObj.getRangeAt(0).getBoundingClientRect();
-        positionPanel(keyPointsPanel, rect);
-        cleanupImages();
-        $('#addKeyPointpanel').show();
-    } else {
-      // hide both panels
-      $('#addKeyPointpanel').hide();
+  var textObj = window.getSelection();
+  var strLength = window.getSelection().toString().length;
+  if (strLength > 10) {
+    // as document fragment
+    text = textObj.getRangeAt(0).cloneContents();
+    // as string
+    // text = window.getSelection().toString();
+      var rect = textObj.getRangeAt(0).getBoundingClientRect();
+      positionPanel(keyPointsPanel, rect);
       cleanupImages();
-    }
+  } else {
+    // hide both panels
+    $('#addKeyPointpanel').hide();
+    cleanupImages();
+  }
 }
 
 // clicking on an image > showing the image panel
@@ -44,7 +44,6 @@ $('body').on('click', 'img', function(e){
   var imgLocation = target.getBoundingClientRect();
   positionPanel(keyImagesPanel, imgLocation);
   $('#addKeyPointpanel').hide();
-  $('#addKeyImagepanel').show();
 });
 
 // adding a key point

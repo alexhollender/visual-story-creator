@@ -12,9 +12,9 @@ header {
   transition: all 250ms linear;
 }
 header .header {
-  max-width: 1660px;
+  max-width: 1500px;
   margin: 0 auto;
-  padding: 6px 25px;
+  padding: 6px 40px;
   justify-content: unset;
 }
 header .header > div {
@@ -96,7 +96,7 @@ header .header .header-right .languages-container div.language-menu img:hover {
   opacity: 1;
 }
 header .header .header-right .user-icon {
-  background-color: #ffffff;
+  background: #ffffff;
 }
 header .header .header-right .user-icon:hover {
   background-color: rgba(0, 24, 73, 0.02745098);
@@ -140,6 +140,9 @@ header.headroom--not-top.headroom--pinned .header {
 header.headroom--not-top.headroom--pinned .subheader {
   opacity: 1;
   transform: translateY(0);
+}
+header.headroom--not-top.headroom--pinned ~ div.outer-container div.page-container div.toc-wrapper {
+  top: 60px;
 }
 header.logged-in .header {
   padding: 5px 25px;

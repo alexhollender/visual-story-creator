@@ -1,20 +1,21 @@
 #creatorPanel {
-  margin-left: 25px;
-  border-left: 1px solid #EAECF0;
-  max-width: 400px;
 
   .creatorPanelContent {
-    margin-left: 20px;
 
     .title {
     }
 
+    > p {
+      margin-bottom: 30px;
+      line-height: 22px;
+    }
+
     .imagePanel, .textPanel {
-      background: #F8F9FA;
       border: 1px dashed #A2A9B1;
       border-radius: 4px;
-      padding: 30px;
       margin: 0 0 20px 0;
+
+      p { padding: 30px; }
     }
   }
 
@@ -38,5 +39,9 @@
     height: 30px;
     font-size: 14px;
     margin: 0 0 10px 0;
+  }
+
+  a {
+    margin-bottom: 10px;
   }
 }
