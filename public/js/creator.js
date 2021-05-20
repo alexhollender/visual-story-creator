@@ -1,11 +1,13 @@
+/* global uiLang */
+
 // current text selection
-var fragment;
+let fragment;
 // current image selection
-var image;
-var keyPointsPanel = document.getElementById( 'addKeyPointpanel' );
-var keyImagesPanel = document.getElementById( 'addKeyImagepanel' );
-var keyPoints = [];
-var keyImages = [];
+let image;
+const keyPointsPanel = document.getElementById( 'addKeyPointpanel' );
+const keyImagesPanel = document.getElementById( 'addKeyImagepanel' );
+const keyPoints = [];
+const keyImages = [];
 
 function cleanupImages() {
 	$( '#addKeyImagepanel' ).hide();
@@ -19,6 +21,7 @@ function positionPanel( panelName, rectange ) {
 }
 
 // highlighting text > showing the key points panel
+// eslint-disable-next-line no-unused-vars
 function mouseUp() {
 	const textObj = window.getSelection();
 	const strLength = window.getSelection().toString().length;
@@ -47,7 +50,9 @@ $( 'body' ).on( 'click', 'img', function ( e ) {
 } );
 
 // adding a key point
+// eslint-disable-next-line no-unused-vars
 function addKeyPoint() {
+	// eslint-disable-next-line no-jquery/no-sizzle
 	const target = $( '#keyPoints option:selected' ).val();
 	$( `#keypoint${target}` )
 		.html( '' )
@@ -57,7 +62,9 @@ function addKeyPoint() {
 }
 
 // adding a key image
+// eslint-disable-next-line no-unused-vars
 function addKeyImage() {
+	// eslint-disable-next-line no-jquery/no-sizzle
 	const destination = $( '#keyImages option:selected' ).val();
 	$( `#img${destination}` ).html( image );
 	$( '#addKeyImagepanel' ).hide();
@@ -65,6 +72,7 @@ function addKeyImage() {
 	keyImages[ destination ] = image.cloneNode();
 }
 
+// eslint-disable-next-line no-unused-vars
 function convertToWikitext() {
 	let html = '';
 	for ( let i = 0, l = Math.max( keyPoints.length, keyImages.length ); i < l; i++ ) {
@@ -86,6 +94,7 @@ function convertToWikitext() {
 	}
 	$.post( `https://${uiLang}.wikipedia.org/api/rest_v1/transform/html/to/wikitext`, {
 		html: html,
+		// eslint-disable-next-line camelcase
 		scrub_wikitext: 1
 	} ).then( function ( resp ) {
 		// Trim, and remove excess linbreaks
