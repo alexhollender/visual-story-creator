@@ -1,25 +1,53 @@
-#creatorPanel h3 {
+.page-container .panel-wrapper {
+  min-width: 280px;
+  max-width: 280px;
+  height: fit-content;
+  max-height: 90vh;
+  margin: 50px 40px 0 10px;
+  position: sticky;
+  top: 22px;
+  overflow: scroll;
+  background: #F8F9FA;
+  border-radius: 4px;
+  padding: 0 5px 16px 20px;
+  transition: all 300ms;
+}
+.page-container .panel-wrapper::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.page-container .panel-wrapper::-webkit-scrollbar:vertical {
+  width: 11px;
+}
+.page-container .panel-wrapper::-webkit-scrollbar:horizontal {
+  height: 11px;
+}
+.page-container .panel-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid white;
+  /* should match background, can't be transparent */
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.page-container .panel-wrapper #creatorPanel h3 {
   position: sticky;
   top: 0;
   background: #F8F9FA;
   border-bottom: 1px solid #eaeaea;
 }
-#creatorPanel > p {
+.page-container .panel-wrapper #creatorPanel > p {
   margin-bottom: 30px;
   line-height: 22px;
 }
-#creatorPanel .imagePanel, #creatorPanel .textPanel {
+.page-container .panel-wrapper #creatorPanel .imagePanel, .page-container .panel-wrapper #creatorPanel .textPanel {
   border: 1px dashed #A2A9B1;
   border-radius: 4px;
   margin: 0 0 20px 0;
   padding: 10px;
 }
-#creatorPanel .imagePanel img, #creatorPanel .textPanel img {
+.page-container .panel-wrapper #creatorPanel .imagePanel img, .page-container .panel-wrapper #creatorPanel .textPanel img {
   width: 100%;
   height: auto;
 }
-
-#addKeyPointpanel, #addKeyImagepanel {
+.page-container .panel-wrapper #addKeyPointpanel, .page-container .panel-wrapper #addKeyImagepanel {
   width: 150px;
   border-radius: 5px;
   background: white;
@@ -28,16 +56,16 @@
   border: 1px solid gray;
   padding: 15px;
 }
-#addKeyPointpanel p, #addKeyImagepanel p {
+.page-container .panel-wrapper #addKeyPointpanel p, .page-container .panel-wrapper #addKeyImagepanel p {
   margin: 0 0 10px 0;
 }
-#addKeyPointpanel select, #addKeyImagepanel select {
+.page-container .panel-wrapper #addKeyPointpanel select, .page-container .panel-wrapper #addKeyImagepanel select {
   width: 100%;
   height: 30px;
   font-size: 14px;
   margin: 0 0 10px 0;
 }
-#addKeyPointpanel a, #addKeyImagepanel a {
+.page-container .panel-wrapper #addKeyPointpanel a, .page-container .panel-wrapper #addKeyImagepanel a {
   margin-bottom: 10px;
 }
 

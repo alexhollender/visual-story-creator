@@ -1,50 +1,81 @@
-#creatorPanel {
-  h3 {
+.page-container {
+  // if the sidebar is showing hide the ToC
+  // &.show-sidebar {
+  //   .toc-wrapper { opacity: 0; }
+  // }
+  .panel-wrapper {
+    min-width: 280px;
+    max-width: 280px;
+    height: fit-content;
+    max-height: 90vh;
+    margin: 50px 40px 0 10px;
     position: sticky;
-    top: 0;
+    top: 22px;
+    overflow: scroll;
     background: #F8F9FA;
-    border-bottom: 1px solid #eaeaea;
-  }
-
-  > p {
-    margin-bottom: 30px;
-    line-height: 22px;
-  }
-
-  .imagePanel, .textPanel {
-    border: 1px dashed #A2A9B1;
     border-radius: 4px;
-    margin: 0 0 20px 0;
-    padding: 10px;
+    padding: 0 5px 16px 20px;
+    transition: all 300ms;
 
-    img {
-      width: 100%;
-      height: auto;
+    // make scrollbar always show
+    &::-webkit-scrollbar { -webkit-appearance: none; }
+    &::-webkit-scrollbar:vertical { width: 11px; }
+    &::-webkit-scrollbar:horizontal { height: 11px; }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      border: 2px solid white; /* should match background, can't be transparent */
+      background-color: rgba(0, 0, 0, .40);
     }
-  }
-}
 
-#addKeyPointpanel, #addKeyImagepanel {
-  width: 150px;
-  border-radius: 5px;
-  background: white;
-  position: fixed;
-  display: none;
-  border: 1px solid gray;
-  padding: 15px;
+    #creatorPanel {
+      h3 {
+        position: sticky;
+        top: 0;
+        background: #F8F9FA;
+        border-bottom: 1px solid #eaeaea;
+      }
 
-  p {
-    margin: 0 0 10px 0;
-  }
+      > p {
+        margin-bottom: 30px;
+        line-height: 22px;
+      }
 
-  select {
-    width: 100%;
-    height: 30px;
-    font-size: 14px;
-    margin: 0 0 10px 0;
-  }
+      .imagePanel, .textPanel {
+        border: 1px dashed #A2A9B1;
+        border-radius: 4px;
+        margin: 0 0 20px 0;
+        padding: 10px;
 
-  a {
-    margin-bottom: 10px;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    #addKeyPointpanel, #addKeyImagepanel {
+      width: 150px;
+      border-radius: 5px;
+      background: white;
+      position: fixed;
+      display: none;
+      border: 1px solid gray;
+      padding: 15px;
+
+      p {
+        margin: 0 0 10px 0;
+      }
+
+      select {
+        width: 100%;
+        height: 30px;
+        font-size: 14px;
+        margin: 0 0 10px 0;
+      }
+
+      a {
+        margin-bottom: 10px;
+      }
+    }
   }
 }
