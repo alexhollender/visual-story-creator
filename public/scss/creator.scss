@@ -20,12 +20,12 @@
 
 }
 
-#addKeyPointpanel {
+#addKeyPointpanel, #addKeyImagepanel {
   width: 150px;
   height: 150px;
   border-radius: 5px;
   background: white;
-  position: absolute;
+  position: fixed;
   display: none;
   border: 1px solid gray;
   padding: 15px;

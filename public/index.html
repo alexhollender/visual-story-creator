@@ -190,7 +190,7 @@
             <p>Select text or an image from the article to begin building a visual story</p>
             <div class="imagePanel" id="img1">image 1</div>
             <div class="textPanel" id="keypoint1">key point 1</div>
-            <div class="imagePanel" id="img1">image 2</div>
+            <div class="imagePanel" id="img2">image 2</div>
             <div class="textPanel" id="keypoint2">key point 2</div>
             <div class="imagePanel" id="img3">image 3</div>
             <div class="textPanel" id="keypoint3">key point 3</div>
@@ -239,6 +239,18 @@
       <option value="keypoint5">Key point 5</option>
     </select>
     <a class="button blue" onclick="addKeyPoint()">Add key point</a>
+  </div>
+
+  <div id="addKeyImagepanel">
+    Create key image
+    <select name="points" id="keyImages">
+      <option value="img1">Image 1</option>
+      <option value="img2">Image 2</option>
+      <option value="img3">Image 3</option>
+      <option value="img4">Image 4</option>
+      <option value="img5">Image 5</option>
+    </select>
+    <a class="button blue" onclick="addKeyImage()">Add image</a>
   </div>
 
   <script
