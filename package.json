@@ -1,8 +1,11 @@
 {
 	"scripts": {
-		"test": "eslint ."
+		"test": "eslint .",
+		"build": "sass public/scss:public/css",
+		"watch": "sass --watch public/scss:public/css"
 	},
 	"devDependencies": {
-		"eslint-config-wikimedia": "^0.20.0"
+		"eslint-config-wikimedia": "^0.20.0",
+		"sass": "^1.32.13"
 	}
 }
