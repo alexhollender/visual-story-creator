@@ -107,6 +107,7 @@ function convertToWikitext() {
 	let html = '';
 	for ( let i = 0, l = Math.max( keyPoints.length, keyImages.length ); i < l; i++ ) {
 		if ( keyImages[ i ] ) {
+			image = keyImages[ i ];
 			const $p = $( '<div>' )
 				.addClass( 'keyImage' )
 				.append(
