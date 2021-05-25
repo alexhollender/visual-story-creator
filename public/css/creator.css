@@ -47,6 +47,11 @@
   width: 100%;
   height: auto;
 }
+.page-container .panel-wrapper #creatorPanel a {
+  position: sticky;
+  bottom: -16px;
+  height: 40px;
+}
 
 #addKeyPointpanel, #addKeyImagepanel {
   width: 150px;

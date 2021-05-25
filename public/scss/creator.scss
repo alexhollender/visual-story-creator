@@ -47,6 +47,12 @@
         width: 100%;
         height: auto;
       }
+
+      a {
+        position: sticky;
+        bottom: -16px;
+        height: 40px;
+      }
     }
   }
 }

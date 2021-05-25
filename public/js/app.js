@@ -58,23 +58,6 @@ $( 'body' ).on( 'click', '.languages-container a', function ( e ) {
 	e.stopPropagation();
 } );
 
-// hide/show options panel
-// eslint-disable-next-line no-unused-vars
-const toggleSettingsPanel = () => {
-	$( '.animation-checkbox' ).toggleClass( 'open' );
-};
-
-// switch logged-in logged-out state
-// eslint-disable-next-line no-unused-vars
-const switchLoginState = () => {
-	$( 'body' ).toggleClass( 'loggedIn' );
-};
-
-// turn on floating header from hover
-$( 'header' ).on( 'hover', function () {
-	$( this ).addClass( 'headroom--pinned' );
-} );
-
 $( function () {
 
 	getLanguageFromURL();
